@@ -56,7 +56,9 @@ python3 main.py generate-music -in <input-dna-file> -out <mid,wav,txt> -tempo<be
  Parameters
 
 >`in`: The input DNA sequence ( a text file or *.fasta* file). "-in" parameter input file should be kept in the 'Lamarck_DNA/input' folder.
+
 >`out`: Specify the output format/s () in the -out parameter. Output files will be generated in the 'LAMARCK_DNA/output' folder.
+
 >`tempo`: Tempo value represents beats per minute (bpm), eg: 100
  
 Decoding - sample usage
@@ -68,7 +70,7 @@ python3 main.py generate-music -in dna_seq.txt -out mid,wav,txt -tempo 100
 ## Testing Lamarckian-inheritance
 
 
-To test the impact of Lamarckian inheritance, we have deployed different mutational regimes. The intention is to incorporate different noise patterns (mutations) in the actual audio, hence, the corresponding DNA sequences will be different from that of the original one, depending on the level of noise that is merged with. Different types of mutations are considered including synonymous, non-synonymous and single point mutations, at codon and musical element levels. A modified version of _Needleman_-_Wunsch_ algorithm is implemented to compare the distance between the derived audio files from different iterations. You can simulate the mutation-step as follows:
+>To test the impact of Lamarckian inheritance, we have deployed different mutational regimes. The intention is to incorporate different noise patterns (mutations) in the actual audio, hence, the corresponding DNA sequences will be different from that of the original one, depending on the level of noise that is merged with. Different types of mutations are considered including synonymous, non-synonymous and single point mutations, at codon and musical element levels. A modified version of _Needleman_-_Wunsch_ algorithm is implemented to compare the distance between the derived audio files from different iterations. You can simulate the mutation-step as follows:
 
 ### Synonymous-mutation-workflow
 > In this mutational scheme, the DNA sequences derived during successive iterations carry the same information, though it does not necessarily preserve the codon choice as codons are randomly selected by the code to encode, from 4 codon options. Hence, the information flow between DNA sequence and audio does not change any information at codon and musical score levels.
@@ -80,7 +82,9 @@ python3 main.py synonymous-wf -in <input-MIDI-file> -n <number-of-iterations> -t
  Parameters
 
 >`in`: The input MIDI file ( a single track, 4/4 time signature MIDI). "-in" parameter input file should be kept in the 'Lamarck_DNA/synonymous' folder.
+
 >`n`: Number of iterations
+
 >`tempo`: Tempo value represents beats per minute (bpm), eg: 100
  
  Synonymous mutation- sample usage
@@ -99,7 +103,9 @@ python3 main.py randomised-wf -in <input-MIDI-file> -n <number-of-iterations> -t
  Parameters
 
 >`in`: The input MIDI file ( a single track, 4/4 time signature MIDI). "-in" parameter input file should be kept in the 'Lamarck_DNA/randomised' folder.
+
 >`n`: Number of iterations
+
 >`tempo`: Tempo value represents beats per minute (bpm), eg: 100
  
 Random single point mutation- sample usage
@@ -118,7 +124,9 @@ python3 main.py mutation-wf -in <input-MIDI-file> -n <number-of-iterations> -tem
  Parameters
 
 >`in`: The input MIDI file ( a single track, 4/4 time signature MIDI). "-in" parameter input file should be kept in the 'Lamarck_DNA/workflow' folder.
+
 >`n`: Number of iterations
+
 >`tempo`: Tempo value represents beats per minute (bpm), eg: 100
  
  Non-synonymous mutation- sample usage
@@ -127,8 +135,11 @@ python3 main.py mutation-wf -in sample.mid -n 5 -tempo 100
 ```
 >After running the command the following actions take place:
 ( a )  *dna_mut_1.txt* will be created in the 'Lamarck_DNA/workflow/encoding' directory converting the *original music.mid* in the Lamarck_DNA/workflow' directory
+
 ( b ) *dna_mut_1.txt* is converted to *midi_1.mid*, *music_1.wav* and *music_note_1.txt* files and stored in the 'Lamarck_DNA/workflow/decoding/iter_1' directory
+
 ( c ) *midi_1.mid* file created in step (b) is converted back to *dna_mut_2.txt* and stored in the 'Lamarck_DNA/workflow/encoding' directory.
+
 The above steps repeat for *n* number of times as mentioned in the command.
 
 ### Comparing-audio files 
@@ -188,6 +199,7 @@ Python3 main.py generate-midi -in <input-music score-text file> -tempo <beats pe
  Parameters
 
 >`in`: The input music-score file ( a text file containing musical notes and durations). "-in" parameter input file should be kept in the 'Lamarck_DNA/input' folder.
+
 >`tempo`: Tempo value represents beats per minute (bpm), eg: 100
  
  Generating MIDI file from music-score - sample usage
@@ -204,6 +216,7 @@ Python3 main.py generate-tabs -in <input-MIDI-file> -tempo <beats per minute>
  Parameters
 
 >`in`: The input MIDI file ( ingle track, 4/4 time signature MIDI file). "-in" parameter input file should be kept in the 'Lamarck_DNA/input' folder.
+
 >`tempo`: Tempo value represents beats per minute (bpm), eg: 100
  
  Generating music-score from MIDI file - sample usage
@@ -222,6 +235,7 @@ python3 main.py correct-midi -in <input-MIDI-file> -tempo <beats per minute>
  Parameters
 
 >`in`: The input MIDI file ( a single track, 4/4 time signature MIDI). "-in" parameter input file should be kept in the 'Lamarck_DNA/input' folder.
+
 >`tempo`: Tempo value represents beats per minute (bpm), eg: 100
  
 MIDI-correction - sample usage
@@ -240,6 +254,7 @@ python3 main.py split-midi -in <input-MIDI-file> -tempo <beats per minute>
  Parameters
 
 >`in`: The input MIDI file ( a multi-track MIDI file). "-in" parameter input file should be kept in the 'Lamarck_DNA/input' folder.
+
 >`tempo`: Tempo value represents beats per minute (bpm), eg: 100
  
 Split a multi-track MIDI file - sample usage
@@ -247,5 +262,10 @@ Split a multi-track MIDI file - sample usage
 python3 main.py split-midi -in sample.mid -tempo 100
 ```
 >Running this command will generate separate MIDI files for each tracks and will be stored in 'Lamarck_DNA/output/midi-tracks' folder. 
+
+---
+If you found Lamarck-DNA project useful, please consider to cite:
+
+> Manuscript citation[to be added]
 
 ---
