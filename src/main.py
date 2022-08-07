@@ -2,8 +2,6 @@
 # Main scipt with which arguments are passed during execution
 
 import sys
-# from converters.dna_to_midi_converter import DNAToMidiConverter
-# from converters.midi_to_dna_converter import MidiToDNAConverter
 from converters.midi_to_wav_converter import MidiToWavConverter
 from converters.dna_to_midi_converter_v2 import DNAToMidiConverterV2
 from converters.midi_to_dna_converter_v2 import MidiToDNAConverterV2
