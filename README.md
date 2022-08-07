@@ -38,6 +38,7 @@ python3 main.py generate-dna -in <input-MIDI-file> -tempo <beats per minute>
  Parameters
 
 >`in`: The input MIDI file ( a single track, 4/4 time signature MIDI). "-in" parameter input file should be kept in the 'Lamarck_DNA/input' folder.
+
 >`tempo`: Tempo value represents beats per minute (bpm), eg: 100
  
  Encoding - sample usage
