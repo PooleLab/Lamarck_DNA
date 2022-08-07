@@ -135,12 +135,10 @@ python3 main.py mutation-wf -in sample.mid -n 5 -tempo 100
 ```
 >After running the command the following actions take place:
 ( a )  *dna_mut_1.txt* will be created in the 'Lamarck_DNA/workflow/encoding' directory converting the *original music.mid* in the Lamarck_DNA/workflow' directory
+>( b ) *dna_mut_1.txt* is converted to *midi_1.mid*, *music_1.wav* and *music_note_1.txt* files and stored in the 'Lamarck_DNA/workflow/decoding/iter_1' directory
+>( c ) *midi_1.mid* file created in step (b) is converted back to *dna_mut_2.txt* and stored in the 'Lamarck_DNA/workflow/encoding' directory.
 
-( b ) *dna_mut_1.txt* is converted to *midi_1.mid*, *music_1.wav* and *music_note_1.txt* files and stored in the 'Lamarck_DNA/workflow/decoding/iter_1' directory
-
-( c ) *midi_1.mid* file created in step (b) is converted back to *dna_mut_2.txt* and stored in the 'Lamarck_DNA/workflow/encoding' directory.
-
-The above steps repeat for *n* number of times as mentioned in the command.
+>The above steps repeat for *n* number of times as mentioned in the command.
 
 ### Comparing-audio files 
 > A modified version of *Needleman-Wunsch* algorithm is implemented to compare the distance between different audio files generated in different iterations. Two music-score text files are compared at a time. The scoring pattern implemented is as follows:
